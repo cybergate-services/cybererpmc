@@ -84,12 +84,14 @@ volumes:
   odoo_data: 
     driver: local
 networks:
-  cybererp-network:
+cybererp-network1:
     driver: bridge
     driver_opts:
       com.docker.network.bridge.name: br-CUSTOMER
     enable_ipv6: false
     ipam:
       driver: default
+      config:
+        - subnet: 172.26.1.0/24
       
         
