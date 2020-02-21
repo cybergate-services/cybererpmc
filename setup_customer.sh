@@ -136,6 +136,6 @@ sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" letsencrypt.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" pgadmin.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" duplicati.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" portainer.yml
-sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" portainer.yml
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" network.yml
  
 
