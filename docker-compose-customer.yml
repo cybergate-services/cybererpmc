@@ -9,6 +9,8 @@ services:
       - './postgresql_CUSTOMER_data:/bitnami/postgresql'
     networks:
       cybererp-network:
+    env_file:
+      - ./.env_CUSTOMER
     environment:
       - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
       - POSTGRESQL_DATABASE=postgres
@@ -23,18 +25,9 @@ services:
       - './odoo_data/CUSTOMER:/bitnami'
       - './custom-addons/CUSTOMER/:/bitnami/odoo/addons/'
       - './custom-addons/CUSTOMER-uploads/:/bitnami/odoo/addons-uploads'
-    environment:
-      - ODOO_EMAIL=${ODOO_EMAIL}
-      - ODOO_PASSWORD=${ODOO_PASSWORD}
-      - POSTGRESQL_USER=postgres
-      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
-      - POSTGRESQL_HOST=postgresql_CUSTOMER
-      - POSTGRESQL_PORT_NUMBER=5432
-      - SMTP_HOST=${SMTP_HOST}
-      - SMTP_PORT=465
-      - SMTP_USER=${SMTP_USER}
-      - SMTP_PASSWORD=${SMTP_PASSWORD}
-      - SMTP_PROTOCOL=ssl
+    env_file:
+      - ./.env_CUSTOMER
+   
     networks:
       cybererp-CUSTOMER:
     depends_on:
