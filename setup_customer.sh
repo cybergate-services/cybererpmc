@@ -3,9 +3,8 @@
 echo "Enter Odoo customer name"
 while [ -z "${CUSTOMER_NAME}" ]; do
   read -p "Odoo customer name: " -e CUSTOMER_NAME
-  if [ ! -z ${CUSTOMER_NAME} ]; then
+  if [ -z ${CUSTOMER_NAME} ]; then
     echo "Customer name cannot be empty. Please re-enter it again"
-    CUSTOMER_NAME=
   fi
 done
 cp docker-compose-customer.yml docker-compose-${CUSTOMER_NAME}.yml
