@@ -106,3 +106,11 @@ cybererp-CUSTOMER-net:
       driver: default
  EOF
  cat ${CUSTOMER_NAME}-net.conf >> network.yml
+ 
+cat << EOF > ${CUSTOMER_NAME}-letsencrypt.conf 
+       cybererp-CUSTOMER-net:
+        aliases:
+          - letsencrypt
+ EOF
+ cat ${CUSTOMER_NAME}-letsencrypt.conf >> letsencrypt.yml
+
