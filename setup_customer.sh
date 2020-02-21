@@ -88,12 +88,7 @@ SMTP_PORT=465
 SMTP_USER=${SMTP_USER}
 SMTP_PASSWORD=${SMTP_PASSWORD}
 SMTP_PROTOCOL=ssl
-
 EOF
-
-
-mkdir -p ./postgresql_${CUSTOMER_NAME}_data
-chmod 1777 ./postgresql_${CUSTOMER_NAME}_data
 
 cat << EOF > ${CUSTOMER_NAME}-net.conf
 cybererp-CUSTOMER-net:
@@ -103,14 +98,38 @@ cybererp-CUSTOMER-net:
     enable_ipv6: false
     ipam:
       driver: default
- EOF
-cat ${CUSTOMER_NAME}-net.conf >> network.yml
- 
+EOF
 cat << EOF > ${CUSTOMER_NAME}-letsencrypt.conf 
        cybererp-CUSTOMER-net:
         aliases:
           - letsencrypt
- EOF
- cat ${CUSTOMER_NAME}-letsencrypt.conf >> letsencrypt.yml
+
+EOF
+cat << EOF > ${CUSTOMER_NAME}-pgadmin.conf 
+       cybererp-CUSTOMER-net:
+        aliases:
+          - pgadmin
+EOF
+
+cat << EOF > ${CUSTOMER_NAME}-portainer.conf 
+       cybererp-CUSTOMER-net:
+        aliases:
+          - portainer
+EOF
+cat << EOF > ${CUSTOMER_NAME}-duplicati.conf 
+       cybererp-CUSTOMER-net:
+        aliases:
+          - duplicati
+EOF
+ 
+ 
+ 
+mkdir -p ./postgresql_${CUSTOMER_NAME}_data
+chmod 1777 ./postgresql_${CUSTOMER_NAME}_data
+cat ${CUSTOMER_NAME}-net.conf >> network.yml
+cat ${CUSTOMER_NAME}-letsencrypt.conf >> letsencrypt.yml
+cat ${CUSTOMER_NAME}-pgadmin.conf >> pgadmin.yml
+cat ${CUSTOMER_NAME}-duplicati.conf >> duplicati.yml
+cat ${CUSTOMER_NAME}-portainer.conf >> portainer.yml
  
 
