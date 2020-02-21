@@ -8,13 +8,10 @@ services:
     volumes:
       - './postgresql_CUSTOMER_data:/bitnami/postgresql'
     networks:
-      cybererp-network:
+      cybererp-CUSTOMER-net:
     env_file:
       - ./.env_CUSTOMER
-    environment:
-      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
-      - POSTGRESQL_DATABASE=postgres
-      - POSTGRESQL_USER=postgres
+
     restart: always
     
   odoo_CUSTOMER:
@@ -27,9 +24,8 @@ services:
       - './custom-addons/CUSTOMER-uploads/:/bitnami/odoo/addons-uploads'
     env_file:
       - ./.env_CUSTOMER
-   
     networks:
-      cybererp-CUSTOMER:
+      cybererp-CUSTOMER-net:
     depends_on:
       - 3
     restart: always  
