@@ -67,7 +67,7 @@ DHLEVEL=2048
 ONLY_SUBDOMAINS=true 
 STAGING=false
 
-cat << EOF > env _${CUSTOMER_NAME}.conf
+cat << EOF > env_${CUSTOMER_NAME}.conf
 
 # ----------------------------------
 # POSTGRESQL Database Environment
