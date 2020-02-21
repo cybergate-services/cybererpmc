@@ -104,7 +104,7 @@ cybererp-CUSTOMER-net:
     ipam:
       driver: default
  EOF
- cat ${CUSTOMER_NAME}-net.conf >> network.yml
+cat ${CUSTOMER_NAME}-net.conf >> network.yml
  
 cat << EOF > ${CUSTOMER_NAME}-letsencrypt.conf 
        cybererp-CUSTOMER-net:
@@ -112,4 +112,5 @@ cat << EOF > ${CUSTOMER_NAME}-letsencrypt.conf
           - letsencrypt
  EOF
  cat ${CUSTOMER_NAME}-letsencrypt.conf >> letsencrypt.yml
+ 
 
