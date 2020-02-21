@@ -95,3 +95,14 @@ EOF
 
 mkdir -p ./postgresql_${CUSTOMER_NAME}_data
 chmod 1777 ./postgresql_${CUSTOMER_NAME}_data
+
+cat << EOF > ${CUSTOMER_NAME}-net.conf
+cybererp-CUSTOMER-net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-CUSTOMER
+    enable_ipv6: false
+    ipam:
+      driver: default
+ EOF
+ cat ${CUSTOMER_NAME}-net.conf >> network.yml
