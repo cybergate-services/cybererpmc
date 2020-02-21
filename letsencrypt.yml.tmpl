@@ -1,0 +1,26 @@
+version: '2.1'
+services:
+ 
+  letsencrypt:
+    image: cybergatelabs/letsencrypt
+    container_name: letsencrypt
+    hostname: letsencrypt
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - URL=${URL}
+      - SUBDOMAINS=${SUBDOMAINS},
+      - EXTRA_DOMAINS=${EXTRA_DOMAINS}
+      - VALIDATION=${VALIDATION}
+      - EMAIL=${EMAIL}
+      - DHLEVEL=${DHLEVEL}
+      - ONLY_SUBDOMAINS=${ONLY_SUBDOMAINS}
+      - STAGING=${STAGING}
+      
+    networks:
+      cybererp-network1:
+        aliases:
+          - letsencrypt
