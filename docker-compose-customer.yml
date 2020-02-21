@@ -26,5 +26,5 @@ services:
     networks:
       cybererp-CUSTOMER-net:
     depends_on:
-      - 3
+      - postgresql_CUSTOMER
     restart: always  
