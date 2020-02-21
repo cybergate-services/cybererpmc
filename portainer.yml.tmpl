@@ -1,3 +1,6 @@
+version: '2.1'
+services:
+
   portainer:
     image: portainer/portainer
     container_name: portainer
@@ -8,5 +11,4 @@
     restart: always
     networks:
       cybererp-CUSTOMER-net:
-        aliases:
-         - portainer
+       
