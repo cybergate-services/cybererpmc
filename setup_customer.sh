@@ -7,8 +7,8 @@ while [ -z "${CUSTOMER_NAME}" ]; do
     echo "Customer name cannot be empty. Please re-enter it again"
   fi
 done
-cp docker-compose-customer.yml docker-compose-${CUSTOMER_NAME}.yml
-sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" docker-compose-${CUSTOMER_NAME}.yml
+cp customer.yml ${CUSTOMER_NAME}.yml
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" ${CUSTOMER_NAME}.yml
 
 
 echo "Enter SMTP host that will be used to send mails from Odoo"
