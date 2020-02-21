@@ -10,7 +10,7 @@ services:
     networks:
       cybererp-CUSTOMER-net:
     env_file:
-      - ./.env_CUSTOMER
+      - ./env_CUSTOMER.conf
     restart: always
     
   odoo_CUSTOMER:
@@ -22,7 +22,7 @@ services:
       - './custom-addons/CUSTOMER/:/bitnami/odoo/addons/'
       - './custom-addons/CUSTOMER-uploads/:/bitnami/odoo/addons-uploads'
     env_file:
-      - ./.env_CUSTOMER
+      - ./env_CUSTOMER.conf
     networks:
       cybererp-CUSTOMER-net:
     depends_on:
