@@ -1,0 +1,45 @@
+version: '2.1'
+services:
+
+  postgresql:
+    image: 'bitnami/postgresql:11'
+    container_name: postgresql
+    hostname: postgresql
+    volumes:
+      - './postgresql_data:/bitnami/postgresql'
+    networks:
+      cybererp-network:
+        aliases:
+          - letsencrypt
+    environment:
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_DATABASE=postgres
+      - POSTGRESQL_USER=postgres
+    restart: always
+    
+  odoo:
+    image: 'bitnami/odoo:12'
+    container_name: odoo
+    hostname: odoo
+    volumes:  
+      - './odoo_data:/bitnami'
+      - './custom-addons/:/bitnami/odoo/addons/'
+    environment:
+      - ODOO_EMAIL=${ODOO_EMAIL}
+      - ODOO_PASSWORD=${ODOO_PASSWORD}
+      - POSTGRESQL_USER=postgres
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_HOST=postgresql
+      - POSTGRESQL_PORT_NUMBER=5432
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=465
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - SMTP_PROTOCOL=ssl
+    networks:
+      cybererp-network:
+        aliases:
+         - odoo
+    depends_on:
+      - postgresql
+    restart: always  
