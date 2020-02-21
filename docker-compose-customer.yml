@@ -11,7 +11,6 @@ services:
       cybererp-CUSTOMER-net:
     env_file:
       - ./.env_CUSTOMER
-
     restart: always
     
   odoo_CUSTOMER:
