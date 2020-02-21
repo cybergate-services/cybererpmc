@@ -75,3 +75,8 @@ EOF
 
 ln ./cybererp.conf ./.env
 
+cp letsencrypt.yml.tmpl letsencrypt.yml
+cp duplicati.yml.tmpl duplicati.yml
+cp network.yml.tmpl network.yml
+cp pgadmin.yml.tmpl pgadmin.yml
+cp portainer.yml.tmpl portainer.yml
