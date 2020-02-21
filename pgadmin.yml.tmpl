@@ -1,3 +1,6 @@
+version: '2.1'
+services:
+
 pgadmin:
     image: adminer
     container_name: pgadmin
@@ -8,6 +11,5 @@ pgadmin:
     # depends_on:
     #  - postgresql
     networks:
-      cybererp-network1:
-        aliases:
-          - pgadmin
+      cybererp-CUSTOMER-NET:
+        
