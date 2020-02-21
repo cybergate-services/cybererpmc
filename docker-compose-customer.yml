@@ -4,7 +4,7 @@ services:
   postgresql_CUSTOMER:
     image: 'bitnami/postgresql:11'
     container_name: postgresql_CUSTOMER
-    hostname: postgresql
+    hostname: postgresql_CUSTOMER
     volumes:
       - './postgresql_CUSTOMER_data:/bitnami/postgresql'
     networks:
@@ -16,7 +16,7 @@ services:
   odoo_CUSTOMER:
     image: 'bitnami/odoo:12'
     container_name: odoo_CUSTOMER
-    hostname: odoo
+    hostname: odoo_CUSTOMER
     volumes:  
       - './odoo_data/CUSTOMER:/bitnami'
       - './custom-addons/CUSTOMER/:/bitnami/odoo/addons/'
