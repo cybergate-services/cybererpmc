@@ -8,7 +8,7 @@ while [ -z "${CUSTOMER_NAME}" ]; do
   fi
 done
 cp customer.yml.tmpl ${CUSTOMER_NAME}.yml
-sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" ${CUSTOMER_NAME}.yml
+
 
 
 echo "Enter SMTP host that will be used to send mails from Odoo"
@@ -131,5 +131,11 @@ cat ${CUSTOMER_NAME}-letsencrypt.conf >> letsencrypt.yml
 cat ${CUSTOMER_NAME}-pgadmin.conf >> pgadmin.yml
 cat ${CUSTOMER_NAME}-duplicati.conf >> duplicati.yml
 cat ${CUSTOMER_NAME}-portainer.conf >> portainer.yml
+
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" letsencrypt.yml
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" pgadmin.yml
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" duplicati.yml
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" portainer.yml
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" portainer.yml
  
 
