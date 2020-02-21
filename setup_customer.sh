@@ -7,7 +7,7 @@ while [ -z "${CUSTOMER_NAME}" ]; do
     echo "Customer name cannot be empty. Please re-enter it again"
   fi
 done
-cp customer.yml ${CUSTOMER_NAME}.yml
+cp customer.yml.tmpl ${CUSTOMER_NAME}.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" ${CUSTOMER_NAME}.yml
 
 
