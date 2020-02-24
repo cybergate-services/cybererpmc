@@ -89,7 +89,7 @@ SMTP_PROTOCOL=ssl
 EOF
 
 cat << EOF > ${CUSTOMER_NAME}-net.conf
-cybererp-CUSTOMER-net:
+  cybererp-CUSTOMER-net:
     driver: bridge
     driver_opts:
       com.docker.network.bridge.name: br-CUSTOMER
@@ -98,30 +98,27 @@ cybererp-CUSTOMER-net:
       driver: default
 EOF
 cat << EOF > ${CUSTOMER_NAME}-letsencrypt.conf 
-       cybererp-CUSTOMER-net:
-        aliases:
-          - letsencrypt
+   cybererp-CUSTOMER-net:
+     aliases:
+       - letsencrypt
 
 EOF
 cat << EOF > ${CUSTOMER_NAME}-pgadmin.conf 
-       cybererp-CUSTOMER-net:
-        aliases:
-          - pgadmin
+   cybererp-CUSTOMER-net:
+     aliases:
+       - pgadmin
 EOF
 
 cat << EOF > ${CUSTOMER_NAME}-portainer.conf 
-       cybererp-CUSTOMER-net:
-        aliases:
-          - portainer
+   cybererp-CUSTOMER-net:
+     aliases:
+       - portainer
 EOF
 cat << EOF > ${CUSTOMER_NAME}-duplicati.conf 
-       cybererp-CUSTOMER-net:
-        aliases:
-          - duplicati
+   cybererp-CUSTOMER-net:
+     aliases:
+       - duplicati
 EOF
- 
- 
- 
 mkdir -p ./postgresql_${CUSTOMER_NAME}_data
 chmod 1777 ./postgresql_${CUSTOMER_NAME}_data
 cat ${CUSTOMER_NAME}-net.conf >> network.yml
