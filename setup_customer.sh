@@ -9,8 +9,6 @@ while [ -z "${CUSTOMER_NAME}" ]; do
 done
 cp customer.yml.tmpl ${CUSTOMER_NAME}.yml
 
-
-
 echo "Enter SMTP host that will be used to send mails from Odoo"
 while [ -z "${SMTP_HOST}" ]; do
   read -p "SMTP Host: " -e SMTP_HOST
@@ -137,5 +135,6 @@ sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" pgadmin.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" duplicati.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" portainer.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" network.yml
+sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" ${CUSTOMER_NAME}.yml
  
 
