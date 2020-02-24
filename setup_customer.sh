@@ -98,26 +98,26 @@ cat << EOF > ${CUSTOMER_NAME}-net.conf
       driver: default
 EOF
 cat << EOF > ${CUSTOMER_NAME}-letsencrypt.conf 
-    cybererp-CUSTOMER-net:
-      aliases:
-        - letsencrypt
+      cybererp-CUSTOMER-net:
+        aliases:
+          - letsencrypt
 
 EOF
 cat << EOF > ${CUSTOMER_NAME}-pgadmin.conf 
-    cybererp-CUSTOMER-net:
-      aliases:
-        - pgadmin
+      cybererp-CUSTOMER-net:
+        aliases:
+          - pgadmin
 EOF
 
 cat << EOF > ${CUSTOMER_NAME}-portainer.conf 
-    cybererp-CUSTOMER-net:
-      aliases:
-        - portainer
+      cybererp-CUSTOMER-net:
+        aliases:
+          - portainer
 EOF
 cat << EOF > ${CUSTOMER_NAME}-duplicati.conf 
-    cybererp-CUSTOMER-net:
-      aliases:
-        - duplicati
+      cybererp-CUSTOMER-net:
+        aliases:
+          - duplicati
 EOF
 mkdir -p ./postgresql_${CUSTOMER_NAME}_data
 chmod 1777 ./postgresql_${CUSTOMER_NAME}_data
