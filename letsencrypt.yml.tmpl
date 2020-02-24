@@ -19,4 +19,7 @@ services:
       - DHLEVEL=${DHLEVEL}
       - ONLY_SUBDOMAINS=${ONLY_SUBDOMAINS}
       - STAGING=${STAGING}
+    volumes:
+     - ./letsencrypt/config:/config 
     networks:
+    
