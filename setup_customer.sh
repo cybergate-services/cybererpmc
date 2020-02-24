@@ -133,5 +133,11 @@ sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" duplicati.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" portainer.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" network.yml
 sed -i "s/CUSTOMER/${CUSTOMER_NAME}/g" ${CUSTOMER_NAME}.yml
+
+rm -rf ${CUSTOMER_NAME}-net.conf 
+rm -rf  ${CUSTOMER_NAME}-letsencrypt.conf 
+rm -rf ${CUSTOMER_NAME}-pgadmin.conf 
+rm -rf ${CUSTOMER_NAME}-duplicati.conf 
+rm -rf ${CUSTOMER_NAME}-portainer.conf 
  
 
