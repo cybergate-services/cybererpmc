@@ -2,7 +2,7 @@ version: '2.1'
 services:
 
   postgresql_CUSTOMER:
-    image: 'bitnami/postgresql:11'
+    image: 'hub.cybergate.lk/cybererp/postgresql:1.0.0'
     container_name: postgresql_CUSTOMER
     hostname: postgresql_CUSTOMER
     volumes:
@@ -14,7 +14,7 @@ services:
     restart: always
     
   odoo_CUSTOMER:
-    image: 'cybergatelabs/odoo13'
+    image: 'hub.cybergate.lk/cybererp/odoo13:1.0.0'
     container_name: odoo_CUSTOMER
     hostname: odoo_CUSTOMER
     volumes:  
